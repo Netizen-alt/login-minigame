@@ -1,0 +1,285 @@
+﻿<Window x:Class="FAFA.View.LoingIndex"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FAFA.View"
+        mc:Ignorable="d"
+        Title="LoingIndex" Height="590" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True"
+        MouseDown="Window_MouseDown"
+        >
+    <Border CornerRadius="20">
+        <!--<Border.Background>
+            -->
+        <!-- พื้นหลัง -->
+        <!--
+            <ImageBrush ImageSource="None" Stretch="None"/>
+        </Border.Background>-->
+
+        <Border CornerRadius="20"
+            BorderThickness="2"
+            Opacity="0.95">
+
+            <Border.BorderBrush>
+                <!-- สีข้าง -->
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#0D1117" Offset="0"/>
+                    <GradientStop Color="#74b9ff" Offset="0"/>
+                    <GradientStop Color="#00cec9" Offset="0"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <!--สีหลัก หากต้องการใช้พื้นหลัง แนะนำให้ปิด-->
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#FF1216EC" Offset="0"/>
+                    <GradientStop Color="#FFC50A0A" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75*"/>
+                    <ColumnDefinition Width="721*"/>
+                </Grid.ColumnDefinitions>
+                <!-- ขนาด -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+                <!-- ขนาด -->
+                <Grid Grid.Row="0" Grid.ColumnSpan="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- ชื่อ -->
+                    <TextBlock Text="MINIGAME TAITAN"
+                           FontSize="30"
+                           FontFamily="Base 05"
+                           Grid.Column="0"
+                           VerticalAlignment="Center"
+                           Margin="10,0,0,0" FontWeight="Bold" >
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="White"/>
+                                <GradientStop Color="#FFFFD613" Offset="1"/>
+                                <GradientStop Color="#FF3FB4FF" Offset="0.811"/>
+                                <GradientStop Color="#FFE8C9FF" Offset="0.329"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <!-- ปุ่ม -->
+                    <Button x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+
+                <StackPanel
+                            Grid.Row="1"
+                            Orientation="Vertical"
+                            Margin="111,0,186,0" Grid.Column="1">
+                    <Image Source="/Imgs/main.png"
+                           Width="100" Height="100"/>
+
+                    <TextBlock Text="MINIGAME TAITAN"
+                               Foreground="Wheat"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Comic Sans MS"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,5,0,0"/>
+
+                    <TextBlock Text="ความรู้ไม่มีที่สิ้นสุด"
+                               Foreground="LightBlue"
+                               FontSize="25"
+                               FontWeight="Medium"
+                               FontFamily="Lucida Console"
+                               TextAlignment="Center"
+                               TextWrapping="Wrap"
+                               Margin="0,5,0,0"/>
+
+                    <TextBlock Text="Username"
+                               Foreground="DarkGray"
+                               FontSize="20"
+                               FontWeight="Medium"
+                               FontFamily="Comic Sans MS"                             
+                               Margin="0,35,0,0"/>
+
+                    <TextBox x:Name="txtUser"
+                             FontSize="14"
+                             FontFamily="Comic Sans MS"
+                             FontWeight="Medium"
+                             Foreground="Aqua"
+                             CaretBrush="LightBlue"
+                             BorderBrush="DarkBlue"
+                             BorderThickness="0,0,0,2"
+                             Height="28"
+                             VerticalContentAlignment="Center"
+                             Margin="0,5,0,0"
+                             Padding="20,0,0,0">
+
+                        <TextBox.Background>
+                            <ImageBrush ImageSource="/Imgs/user-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </TextBox.Background>
+                    </TextBox>
+
+                    <TextBlock Text="Password"
+                               Foreground="DarkGray"
+                               FontSize="20"
+                               FontWeight="Medium"
+                               FontFamily="Comic Sans MS"                             
+                               Margin="0,15,0,0"/>
+
+                    <PasswordBox x:Name="txtPass"
+                                 FontSize="13"
+                                 FontWeight="Medium"
+                                 FontFamily="Comic Sans MS"
+                                 Foreground="Aqua"
+                                 CaretBrush="LightBlue"
+                                 BorderBrush="DarkBlue"
+                                 BorderThickness="0,0,0,2"
+                                 Height="28"
+                                 VerticalContentAlignment="Center"
+                                 Margin="0,5,0,0"
+                                 Padding="20,0,0,0">
+
+                        <PasswordBox.Background>
+                            <ImageBrush ImageSource="/Imgs/key-icon.png"
+                                        Stretch="None"
+                                        AlignmentX="Left"/>
+                        </PasswordBox.Background>
+                    </PasswordBox>
+
+                    <Button x:Name="btnLogin"
+                            BorderThickness="0"
+                            Content="LOGIN"
+                            Foreground="White"
+                            FontSize="25"
+                            Margin="0,50,0,0"
+                            FontFamily="Base 05"
+                            Cursor="Arrow"
+                            Click="btnLoing_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#FF38FB27"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#FF00440E"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="{x:Type Button}">
+                                <Border Width="200" Height="60"
+                                        CornerRadius="23"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+
+
+                    <StackPanel Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Margin="0,15,0,0">
+                        <TextBlock Text="New to MiniGame?"
+                                           Foreground="White"
+                                           FontSize="20"
+                                           FontWeight="Medium"
+                                           FontFamily="Comic Sans MS"/>
+                        <TextBlock x:Name="blfl_Te" 
+                                   Foreground="#FF00F373" 
+                                   FontSize="20" 
+                                   FontWeight="Medium" 
+                                   FontFamily="Comic Sans MS" 
+                                   Cursor="Hand" 
+                                   Margin="8,0,0,0" 
+                                   Text="Create an account."/>
+                    </StackPanel>
+                </StackPanel>
+                <Image Grid.Column="1" HorizontalAlignment="Left" Height="100" Margin="85,151,0,0" Grid.Row="1" VerticalAlignment="Top" Width="100"/>
+            </Grid>
+        </Border>
+    </Border>
+</Window>
